@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -18,6 +19,7 @@ class JenkinsSampleTest {
 
     @Test
     void verifyBasicJenkinsTest() {
+        Configuration.headless = true;
         Selenide.open("https://www.google.com/");
         $x("//title[text()='Google']").shouldNotBe(Condition.visible);
     }
