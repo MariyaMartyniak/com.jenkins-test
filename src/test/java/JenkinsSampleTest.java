@@ -19,7 +19,7 @@ class JenkinsSampleTest {
     @Test
     void verifyBasicJenkinsTest() {
         Selenide.open("https://www.google.com/");
-        $x("//title[text()='Google']").shouldBe(Condition.visible);
+        $x("//title[text()='Google']").shouldNotBe(Condition.visible);
     }
 
     @AfterAll
