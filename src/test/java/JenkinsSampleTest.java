@@ -12,8 +12,8 @@ import static com.codeborne.selenide.Selenide.$x;
 class JenkinsSampleTest {
 
     @BeforeAll
-    public void setUp() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+    static void beforeAllClass() {
+        SelenideLogger.addListener("Allure Selenide Listener", new AllureSelenide().savePageSource(true).screenshots(true));
     }
 
     @Test
@@ -23,7 +23,7 @@ class JenkinsSampleTest {
     }
 
     @AfterAll
-    public void tearDown() {
+    static void tearDown() {
         SelenideLogger.removeListener("allure");
     }
 }
