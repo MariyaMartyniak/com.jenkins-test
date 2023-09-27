@@ -19,7 +19,6 @@ class JenkinsSampleTest {
 
     @Test
     void verifyBasicJenkinsTest() {
-        Configuration.headless = true;
         Selenide.open("https://www.google.com/");
         $x("//title[text()='Google']").shouldNotBe(Condition.visible);
     }
